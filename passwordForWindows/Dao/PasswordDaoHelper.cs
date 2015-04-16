@@ -128,6 +128,46 @@ namespace Com.Sunbin.Password.Dao
         /// <returns>
         ///     数据表，如果失败，返回一个空数据表
         /// </returns>
+        public DataTable QueryLastItem()
+        {
+            var dt = new DataTable();
+            try
+            {
+                var conn = new SQLiteConnection(SqlConnectString);
+                conn.Open();
+                var cmd = new SQLiteCommand(conn)
+                {
+                    CommandText = "select * from p order by id desc limit 0 , 1;",
+                    CommandType = CommandType.Text
+                };
+                SQLiteDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    dt.Load(dr);
+                }
+                dr.Close();
+                conn.Close();
+            }
+            catch (ArgumentException ae)
+            {
+                MessageBox.Show(ae.Message + Resources.newLineString + ae.Source + Resources.newLineString +
+                                ae.StackTrace + Resources.newLineString + ae.Data);
+            }
+            catch (Exception ex)
+            {
+                //throw new Exception(ex.Message);  
+                MessageBox.Show(ex.Message + Resources.newLineString + ex.Source + Resources.newLineString +
+                                ex.StackTrace + Resources.newLineString + ex.Data);
+            }
+            return dt;
+        }
+
+        /// <summary>
+        ///     读取所有密码
+        /// </summary>
+        /// <returns>
+        ///     数据表，如果失败，返回一个空数据表
+        /// </returns>
         public DataTable Read()
         {
             var dt = new DataTable();
@@ -137,7 +177,7 @@ namespace Com.Sunbin.Password.Dao
                 conn.Open();
                 var cmd = new SQLiteCommand(conn)
                 {
-                    CommandText = "SELECT * FROM p",
+                    CommandText = "SELECT * FROM p ORDER BY id DESC",
                     CommandType = CommandType.Text
                 };
                 SQLiteDataReader dr = cmd.ExecuteReader();

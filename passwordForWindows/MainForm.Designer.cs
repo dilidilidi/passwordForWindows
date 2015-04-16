@@ -1,6 +1,6 @@
 ﻿namespace Com.Sunbin.Password
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -34,20 +34,21 @@
             this.label_plainText = new System.Windows.Forms.Label();
             this.button_generateCipherText = new System.Windows.Forms.Button();
             this.dataGridView_password = new System.Windows.Forms.DataGridView();
-            this.button_localSave = new System.Windows.Forms.Button();
+            this.label_remark = new System.Windows.Forms.Label();
+            this.textBox_remark = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_password)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox_secretKey
             // 
-            this.textBox_secretKey.Location = new System.Drawing.Point(49, 68);
+            this.textBox_secretKey.Location = new System.Drawing.Point(50, 17);
             this.textBox_secretKey.Name = "textBox_secretKey";
             this.textBox_secretKey.Size = new System.Drawing.Size(100, 21);
             this.textBox_secretKey.TabIndex = 0;
             // 
             // textBox_plainText
             // 
-            this.textBox_plainText.Location = new System.Drawing.Point(223, 68);
+            this.textBox_plainText.Location = new System.Drawing.Point(50, 57);
             this.textBox_plainText.Name = "textBox_plainText";
             this.textBox_plainText.Size = new System.Drawing.Size(100, 21);
             this.textBox_plainText.TabIndex = 1;
@@ -55,7 +56,7 @@
             // label_secretKey
             // 
             this.label_secretKey.AutoSize = true;
-            this.label_secretKey.Location = new System.Drawing.Point(49, 34);
+            this.label_secretKey.Location = new System.Drawing.Point(3, 20);
             this.label_secretKey.Name = "label_secretKey";
             this.label_secretKey.Size = new System.Drawing.Size(41, 12);
             this.label_secretKey.TabIndex = 2;
@@ -64,7 +65,7 @@
             // label_plainText
             // 
             this.label_plainText.AutoSize = true;
-            this.label_plainText.Location = new System.Drawing.Point(223, 34);
+            this.label_plainText.Location = new System.Drawing.Point(3, 60);
             this.label_plainText.Name = "label_plainText";
             this.label_plainText.Size = new System.Drawing.Size(41, 12);
             this.label_plainText.TabIndex = 3;
@@ -72,7 +73,7 @@
             // 
             // button_generateCipherText
             // 
-            this.button_generateCipherText.Location = new System.Drawing.Point(373, 68);
+            this.button_generateCipherText.Location = new System.Drawing.Point(50, 140);
             this.button_generateCipherText.Name = "button_generateCipherText";
             this.button_generateCipherText.Size = new System.Drawing.Size(75, 23);
             this.button_generateCipherText.TabIndex = 4;
@@ -85,37 +86,44 @@
             this.dataGridView_password.AllowUserToAddRows = false;
             this.dataGridView_password.AllowUserToResizeColumns = false;
             this.dataGridView_password.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_password.Location = new System.Drawing.Point(49, 139);
+            this.dataGridView_password.Location = new System.Drawing.Point(180, 17);
             this.dataGridView_password.Name = "dataGridView_password";
             this.dataGridView_password.ReadOnly = true;
             this.dataGridView_password.RowTemplate.Height = 23;
-            this.dataGridView_password.Size = new System.Drawing.Size(818, 277);
+            this.dataGridView_password.Size = new System.Drawing.Size(757, 387);
             this.dataGridView_password.TabIndex = 5;
             // 
-            // button_localSave
+            // label_remark
             // 
-            this.button_localSave.Location = new System.Drawing.Point(477, 65);
-            this.button_localSave.Name = "button_localSave";
-            this.button_localSave.Size = new System.Drawing.Size(75, 23);
-            this.button_localSave.TabIndex = 6;
-            this.button_localSave.Text = "保存至本地";
-            this.button_localSave.UseVisualStyleBackColor = true;
-            this.button_localSave.Click += new System.EventHandler(this.button_localSave_Click);
+            this.label_remark.AutoSize = true;
+            this.label_remark.Location = new System.Drawing.Point(3, 100);
+            this.label_remark.Name = "label_remark";
+            this.label_remark.Size = new System.Drawing.Size(41, 12);
+            this.label_remark.TabIndex = 7;
+            this.label_remark.Text = "备注：";
             // 
-            // Form1
+            // textBox_remark
+            // 
+            this.textBox_remark.Location = new System.Drawing.Point(50, 97);
+            this.textBox_remark.Name = "textBox_remark";
+            this.textBox_remark.Size = new System.Drawing.Size(100, 21);
+            this.textBox_remark.TabIndex = 8;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 441);
-            this.Controls.Add(this.button_localSave);
+            this.ClientSize = new System.Drawing.Size(961, 416);
+            this.Controls.Add(this.textBox_remark);
+            this.Controls.Add(this.label_remark);
             this.Controls.Add(this.dataGridView_password);
             this.Controls.Add(this.button_generateCipherText);
             this.Controls.Add(this.label_plainText);
             this.Controls.Add(this.label_secretKey);
             this.Controls.Add(this.textBox_plainText);
             this.Controls.Add(this.textBox_secretKey);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainForm";
+            this.Text = "MainForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_password)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -130,7 +138,8 @@
         private System.Windows.Forms.Label label_plainText;
         private System.Windows.Forms.Button button_generateCipherText;
         private System.Windows.Forms.DataGridView dataGridView_password;
-        private System.Windows.Forms.Button button_localSave;
+        private System.Windows.Forms.Label label_remark;
+        private System.Windows.Forms.TextBox textBox_remark;
     }
 }
 
